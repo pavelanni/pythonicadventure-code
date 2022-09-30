@@ -1,0 +1,6 @@
+= Let's talk Python
+Code and other resources for the book
+
+Welcome to _Let's talk Python_ book! Here you will find the programs that 
+Simon and Erik developed in the book, as well as other interesting materials,
+ideas for your future projects, and more.
