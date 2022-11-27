@@ -1,0 +1,32 @@
+[
+    {
+        "name": "ddd",
+        "drink": "coffee",
+        "flavor": "peppermint",
+        "topping": "chocolate"
+    },
+    {
+        "name": "pavel",
+        "drink": "",
+        "flavor": "",
+        "topping": ""
+    },
+    {
+        "name": "pavel",
+        "drink": "",
+        "flavor": "",
+        "topping": ""
+    },
+    {
+        "name": "Pavel",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "cinnamon"
+    },
+    {
+        "name": "fff",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "cinnamon"
+    }
+]

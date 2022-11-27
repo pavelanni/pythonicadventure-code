@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/order" method="post">
+    <input type="text" name="name" placeholder="ENTER NAME">
+    <select name="drink">
+        <option value="">- Choose drink -</option>
+        <option value="coffee">Coffee</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="decaf">Decaf</option>
+    </select>
+    <select name="flavor">
+        <option value="">- Choose flavor -</option>
+        <option value="caramel">Caramel</option>
+        <option value="vanilla">Vanilla</option>
+        <option value="peppermint">Peppermint</option>
+        <option value="raspberry">Raspberry</option>
+        <option value="plain">Plain</option>
+    </select>
+    <select name="topping">
+        <option value="">- Choose topping -</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="cinnamon">Cinnamon</option>
+        <option value="caramel">Caramel</option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
