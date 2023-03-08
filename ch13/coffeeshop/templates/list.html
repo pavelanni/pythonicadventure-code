@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Drink</th>
+        <th>Flavor</th>
+        <th>Topping</th>
+    </tr>
+    {% for o in orders -%}
+    <tr>
+        <td>{{ o['name'] }}</td>
+        <td>{{ o['drink'] }}</td>
+        <td>{{ o['flavor'] }}</td>
+        <td>{{ o['topping'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

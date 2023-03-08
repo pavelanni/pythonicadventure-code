@@ -14,7 +14,6 @@ def save_order(order):
     con.commit()
     return
 
-
 def get_orders():
     con = sqlite3.connect("orders.db")
     con.row_factory = sqlite3.Row
@@ -24,6 +23,19 @@ def get_orders():
 
     return rows
 
+def read_menu(filename):
+    f = open(filename)
+    temp = f.readlines()
+    result = []
+    for item in temp:
+        new_item = item.strip()
+        result.append(new_item)
+
+    return result
+
+drinks = read_menu("drinks.txt")
+flavors = read_menu("flavors.txt")
+toppings = read_menu("toppings.txt")
 
 con = sqlite3.connect("orders.db")
 cur = con.cursor()
@@ -32,26 +44,28 @@ cur.execute("CREATE TABLE IF NOT EXISTS orders(name, drink, flavor, topping);")
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def index():
     return render_template("index.html")
 
+@app.route("/hello/<name>")
+def greet(name="Stranger"):
+    return render_template("greeting.html", name=name)
 
 @app.route("/order", methods=("GET", "POST"))
 def order():
     if request.method == "POST":
-        new_order = {
-            "name": request.form["name"],
-            "drink": request.form["drink"],
-            "flavor": request.form["flavor"],
-            "topping": request.form["topping"],
-        }
+        new_order = {"name": request.form["name"],
+                     "drink": request.form["drink"],
+                     "flavor": request.form["flavor"],
+                     "topping": request.form["topping"]
+                     }
         save_order(new_order)
-        return render_template("print.html", new_order=new_order)
+        return render_template(
+            "print.html", new_order=new_order
+        )
 
-    return render_template("order.html")
-
+    return render_template("order.html", drinks=drinks, flavors=flavors, toppings=toppings)
 
 @app.route("/list", methods=["GET"])
 def list():

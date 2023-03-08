@@ -1,7 +1,8 @@
+import os
+import json
 import sqlite3
 
 from flask import Flask, render_template, request
-
 
 def save_order(order):
     con = sqlite3.connect("orders.db")
@@ -32,10 +33,14 @@ def read_menu(filename):
 
     return result
 
-def create_db(dbname):
-    con = sqlite3.connect(dbname)
-    cur = con.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS orders(name, drink, flavor, topping);")
+drinks = read_menu("drinks.txt")
+flavors = read_menu("flavors.txt")
+toppings = read_menu("toppings.txt")
+
+con = sqlite3.connect("orders.db")
+cur = con.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS orders(name, drink, flavor, topping);")
+
 
 app = Flask(__name__)
 
@@ -67,13 +72,3 @@ def list():
     orders = get_orders()
 
     return render_template("list.html", orders=orders)
-
-
-
-if __name__ == '__main__':
-    create_db("orders.db")
-    drinks = read_menu("drinks.txt")
-    flavors = read_menu("flavors.txt")
-    toppings = read_menu("toppings.txt")
-
-    app.run()

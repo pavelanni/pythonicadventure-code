@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome to E&E Coffee Shop</h1>
+
+<form action="/order" method="post">
+    {% if error %}
+    <p><strong>{{error}}</strong></p>
+    {% endif %}
+
+    <input type="text" name="name" placeholder="ENTER NAME">
+    <select name="drink">
+      <option value="">- Choose drink -</option>
+      {% for d in drinks -%}
+      <option value="{{ d }}">{{ d | capitalize }}</option>
+      {% endfor %}
+    </select>
+    <select name="flavor">
+      <option value="">- Choose flavor -</option>
+      {% for f in flavors -%}
+      <option value="{{ f }}">{{ f | capitalize }}</option>
+      {% endfor %}
+    </select>
+    <select name="topping">
+      <option value="">- Choose topping -</option>
+      {% for t in toppings -%}
+      <option value="{{ t }}">{{ t | capitalize }}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+</form>
+
+<img src="/static/img/8507631_3925457.jpg"
+ alt="Coffee drinks" width="100%">
+Image by <a href="https://www.freepik.com/free-vector/
+take-away-coffee-coffee-mugs_8507631.htm">Freepik</a>
+
+{% endblock %}
