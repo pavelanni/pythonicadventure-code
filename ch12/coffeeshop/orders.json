@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Erik",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "chocolate"
+    },
+    {
+        "name": "Alex",
+        "drink": "chocolate",
+        "flavor": "vanilla",
+        "topping": "cinnamon"
+    },
+    {
+        "name": "dsd",
+        "drink": "coffee",
+        "flavor": "vanilla",
+        "topping": "caramel"
+    },
+    {
+        "name": "fff",
+        "drink": "coffee",
+        "flavor": "peppermint",
+        "topping": "cinnamon"
+    },
+    {
+        "name": "fff",
+        "drink": "coffee",
+        "flavor": "peppermint",
+        "topping": "cinnamon"
+    },
+    {
+        "name": "Tatiana",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "chocolate"
+    },
+    {
+        "name": "Tatiana",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "chocolate"
+    },
+    {
+        "name": "Tania",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "caramel"
+    },
+    {
+        "name": "Tania",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "caramel"
+    },
+    {
+        "name": "Emily",
+        "drink": "coffee",
+        "flavor": "peppermint",
+        "topping": "caramel"
+    },
+    {
+        "name": "Emily",
+        "drink": "coffee",
+        "flavor": "peppermint",
+        "topping": "caramel"
+    },
+    {
+        "name": "Tania",
+        "drink": "coffee",
+        "flavor": "caramel",
+        "topping": "caramel"
+    },
+    {
+        "name": "Alex",
+        "drink": "chocolate",
+        "flavor": "vanilla",
+        "topping": "caramel"
+    }
+]
