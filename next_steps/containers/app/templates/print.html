@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Hello {{new_order["name"] }}!</h1>
+
+<h2>Here is your order:</h2>
+
+<p>Drink: <strong>{{ new_order["drink"] }}</strong></p>
+<p>Flavor: <strong>{{ new_order["flavor"] }}</strong></p>
+<p>Topping: <strong>{{ new_order["topping"] }}</strong></p>
+
+<form action="/order">
+<input type="submit" value="New order" />
+</form>
+{% endblock %}
