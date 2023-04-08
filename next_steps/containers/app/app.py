@@ -1,3 +1,4 @@
+import os
 import sqlite3
 
 from flask import Flask, render_template, request
@@ -30,7 +31,7 @@ def list():
     return render_template("list.html", orders=orders)
 
 def save_order(order):
-    con = sqlite3.connect("orders.db")
+    con = sqlite3.connect(db_path)
     cur = con.cursor()
     cur.execute(
         "INSERT INTO orders(name,drink,flavor,topping) VALUES(?,?,?,?);",
@@ -40,7 +41,7 @@ def save_order(order):
     return
 
 def get_orders():
-    con = sqlite3.connect("orders.db")
+    con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
     cur = con.cursor()
     cur.execute("SELECT * FROM orders;")
@@ -62,7 +63,8 @@ drinks = read_menu("drinks.txt")
 flavors = read_menu("flavors.txt")
 toppings = read_menu("toppings.txt")
 
-con = sqlite3.connect("orders.db")
+db_path = os.getenv("DATABASE_PATH", "/data/orders.db")
+con = sqlite3.connect(db_path)
 cur = con.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS orders(name, drink, flavor, topping);")
 

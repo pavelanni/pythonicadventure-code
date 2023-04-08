@@ -5,5 +5,8 @@ WORKDIR /app
 COPY ./app/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN mkdir -p /data
+COPY ./app/orders.db /data/orders.db
 COPY app .
 CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+EXPOSE 5000

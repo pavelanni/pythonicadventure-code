@@ -24,14 +24,23 @@ def get_orders():
     return rows
 
 def read_menu(filename):
-    f = open(filename)
-    temp = f.readlines()
-    result = []
-    for item in temp:
-        new_item = item.strip()
-        result.append(new_item)
+    try:
+        with open(filename) as f:
+            result = [item.strip() for ite in f.readlines()]
+    except FileNotFoundError:
+        print(
+        f"Error: The file '{filename}' could not be found.")
+        result = []
+    except PermissionError:
+        print(f"Error: You do not have permission to read \
+        the file '{filename}'.")
+        result = []
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        result = []
 
     return result
+
 
 drinks = read_menu("drinks.txt")
 flavors = read_menu("flavors.txt")
