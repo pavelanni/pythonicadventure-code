@@ -1,6 +1,13 @@
-= Let's talk Python
-Code and other resources for the book
+= A Pythonic Adventure
 
-Welcome to _Let's talk Python_ book! Here you will find the programs that 
-Simon and Erik developed in the book, as well as other interesting materials,
-ideas for your future projects, and more.
+Welcome to _A Pythonic Adventure_ book! Here you will find the programs that
+Simon, Erik, and Emily developed in the book.
+
+You can buy the book here: https://www.manning.com/books/a-pythonic-adventure.
+
+In addition to this repository, there is a book companion site with other useful materials:
+troubleshooting, ideas for other projects, ways to improve the application, and more.
+The site is located at https://pythonicadventure.com/
+
+If you find an error or a way to do something better than in this code examples, please let me know.
+Feel free to open an issue--you contribution is highly appreciated.
