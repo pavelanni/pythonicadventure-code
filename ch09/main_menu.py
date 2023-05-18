@@ -5,6 +5,9 @@ import os
 def main_menu(orders):
     while True:
         order = get_order()
+         if order == {}:
+            print("You entered 'X', exiting...")
+            return
         print("Check your order:")
         print_order(order)
         confirm = input("Confirm? Press Y to confirm, N to cancel: ")
