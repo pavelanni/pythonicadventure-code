@@ -60,7 +60,11 @@ def read_menu(filename):
 
 def get_order():
     order = {}
-    order["name"] = input("What's your name: ")
+    name = input("Enter your name or enter 'X' to exit: ")
+    if name == "X" or name == "x":
+        return {}
+    else:
+        order["name"] = name
     drinks = read_menu("drinks.txt")
     flavors = read_menu("flavors.txt")
     toppings = read_menu("toppings.txt")
